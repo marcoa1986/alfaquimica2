@@ -28,6 +28,14 @@ function normEmail(v = '') {
   return String(v).trim().toLowerCase();
 }
 
+function isAllowedOrigin(origin = '') {
+  if (!origin) return true;
+  if (origin === 'https://alfaquimica2.vercel.app') return true;
+  if (/^https:\/\/alfaquimica2(?:-[a-z0-9-]+)?\.vercel\.app$/i.test(origin)) return true;
+  if (/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(origin)) return true;
+  return false;
+}
+
 async function ensureSchema() {
   await pool.query(`
     CREATE TABLE IF NOT EXISTS cotizaciones_leads (
@@ -56,10 +64,9 @@ async function ensureSchema() {
 }
 
 module.exports = async function handler(req, res) {
-  const allowedOrigin = 'https://alfaquimica2.vercel.app';
   const reqOrigin = req.headers.origin || '';
-  if (reqOrigin === allowedOrigin) {
-    res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+  if (isAllowedOrigin(reqOrigin)) {
+    res.setHeader('Access-Control-Allow-Origin', reqOrigin || 'https://alfaquimica2.vercel.app');
   }
   res.setHeader('Vary', 'Origin');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -93,7 +100,13 @@ module.exports = async function handler(req, res) {
       return res.status(405).json({ ok: false, error: 'Metodo no permitido.' });
     }
 
-    const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
+    let body = req.body;
+    if (typeof body === 'string') {
+      body = body ? JSON.parse(body) : {};
+    } else if (!body || typeof body !== 'object') {
+      body = {};
+    }
+
     const empresa = String(body.empresa || '').trim();
     const contacto = String(body.contacto || '').trim();
     const telefono = String(body.telefono || '').trim();
@@ -164,7 +177,7 @@ module.exports = async function handler(req, res) {
     return res.status(500).json({
       ok: false,
       error: 'Error interno al procesar el registro en Neon.',
-      detail: err.message,
+      detail: err && err.message ? err.message : String(err),
     });
   }
 };

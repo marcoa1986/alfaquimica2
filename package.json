@@ -19,6 +19,7 @@
   "homepage": "https://github.com/marcoa1986/alfaquimica-vercel#readme",
   "type": "module",
   "dependencies": {
-    "@neondatabase/serverless": "^1.2.0"
+    "@neondatabase/serverless": "^1.2.0",
+    "pg": "^8.23.1"
   }
 }
