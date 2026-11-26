@@ -1,0 +1,975 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#0B2C4D" />
+    <title>ALFA QUÍMICA | Alcohol isopropílico y solventes para la industria</title>
+    <meta name="description" content="Suministro industrial de alcohol isopropílico, alcohol etílico y solvente dieléctrico en CDMX y Estado de México. Arma tu cotización en línea y envíala por WhatsApp, correo o PDF." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:title" content="ALFA QUÍMICA | Pureza en el producto. Certeza en el suministro." />
+    <meta property="og:description" content="Catálogo y cotizador en línea para productos químicos industriales. Cobertura CDMX y Estado de México." />
+    <meta property="og:image" content="assets/hero-industrial.jpg" />
+    <link rel="icon" type="image/png" href="assets/marca.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap nav">
+        <a class="brand" href="#inicio" aria-label="ALFA QUÍMICA, inicio">
+          <img src="assets/marca.png" alt="" width="69" height="46" />
+          <span class="brand-text"><b>ALFA</b><span>QUÍMICA</span></span>
+        </a>
+        <nav class="main" id="mainNav" aria-label="Principal">
+          <a class="link" href="#inicio">Inicio</a>
+          <a class="link" href="#productos">Productos</a>
+          <a class="link" href="#como-cotizar">Cómo cotizar</a>
+          <a class="link" href="#industrias">Industrias</a>
+          <a class="link" href="#faq">Preguntas</a>
+          <a class="link" href="#contacto">Contacto</a>
+          <button class="btn btn-wa drawer-cta" type="button" data-open-cart>
+            <svg class="ico"><use href="assets/icons.svg#i-calc" /></svg>Mi cotización
+          </button>
+        </nav>
+        <div class="nav-actions">
+          <button class="icon-btn cart-btn" type="button" data-open-cart aria-label="Abrir mi cotización">
+            <svg class="ico"><use href="assets/icons.svg#i-cart" /></svg>
+            <span class="t">Mi cotización</span>
+            <span class="count" id="cartCount" hidden>0</span>
+          </button>
+          <a class="btn btn-sm btn-cta" href="#productos">
+            <svg class="ico"><use href="assets/icons.svg#i-calc" /></svg>Cotizar
+          </a>
+          <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+            <svg class="ico"><use href="assets/icons.svg#i-menu" /></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="wrap">
+          <div class="hero-card">
+            <div class="hero-copy">
+              <span class="kicker">ALFA QUÍMICA</span>
+              <h1>Alcohol isopropílico <em>de alta pureza</em> para la industria</h1>
+              <div class="hero-line"></div>
+              <p>Suministro confiable en CDMX y EDOMEX, con atención personalizada.</p>
+              <div class="btn-row hero-actions">
+                <a class="btn" href="#productos">
+                  <svg class="ico"><use href="assets/icons.svg#i-calc" /></svg>Solicitar cotización
+                </a>
+                <a class="btn btn-outline-light" href="#productos">
+                  <svg class="ico"><use href="assets/icons.svg#i-file" /></svg>Conocer el producto
+                </a>
+              </div>
+              <div class="hero-also">También: alcohol etílico y solvente dieléctrico.</div>
+            </div>
+            <div class="hero-photo">
+              <img src="assets/hero-industrial.jpg" alt="Tambor azul y contenedor IBC con el logo de ALFA QUÍMICA frente a una planta industrial" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust">
+        <div class="wrap trust-grid">
+          <div class="trust-item"><span class="trust-ico"><svg class="ico"><use href="assets/icons.svg#i-shield" /></svg></span><div><b>Confianza</b><small>Documentación técnica verificable</small></div></div>
+          <div class="trust-item"><span class="trust-ico"><svg class="ico"><use href="assets/icons.svg#i-flask" /></svg></span><div><b>Calidad</b><small>Especificaciones por producto y lote</small></div></div>
+          <div class="trust-item"><span class="trust-ico"><svg class="ico"><use href="assets/icons.svg#i-truck" /></svg></span><div><b>Entrega confiable</b><small>Coordinada en CDMX y Estado de México</small></div></div>
+          <div class="trust-item"><span class="trust-ico"><svg class="ico"><use href="assets/icons.svg#i-headset" /></svg></span><div><b>Atención personalizada</b><small>Seguimiento directo por WhatsApp</small></div></div>
+        </div>
+      </div>
+
+      <section class="sec" id="productos">
+        <div class="wrap">
+          <div class="sec-head">
+            <div>
+              <span class="kicker">CATÁLOGO</span>
+              <h2>Elige producto, presentación y cantidad</h2>
+              <p class="lead">Agrega lo que necesitas a tu cotización. Las existencias y el tiempo de entrega se confirman contigo por WhatsApp.</p>
+            </div>
+            <div class="chips" id="chips" role="group" aria-label="Filtrar por categoría"></div>
+          </div>
+          <div class="cards" id="cards" aria-live="polite">
+            <noscript><p class="lead">Activa JavaScript para ver el catálogo y cotizar.</p></noscript>
+          </div>
+          <p class="note">Las purezas, concentraciones y propiedades se confirman con la ficha técnica, la hoja de datos de seguridad (SDS) y el certificado de análisis del lote cotizado. Los precios mostrados, cuando existen, son de referencia y no constituyen una oferta hasta su confirmación.</p>
+        </div>
+      </section>
+
+      <section class="sec soft" id="como-cotizar">
+        <div class="wrap">
+          <span class="kicker">CÓMO COTIZAR</span>
+          <h2>Tu cotización en tres pasos</h2>
+          <ol class="steps">
+            <li class="step"><div class="step-n">1</div><h3>Elige tus productos</h3><p>Selecciona presentación y cantidad en el catálogo y agrégalos a tu cotización. Puedes combinar varios.</p></li>
+            <li class="step"><div class="step-n">2</div><h3>Completa tus datos</h3><p>Empresa, contacto y código postal de entrega. Revisa el resumen y el total cuando hay precios.</p></li>
+            <li class="step"><div class="step-n">3</div><h3>Envíala como prefieras</h3>
+              <p>Se genera un folio y un resumen listo para enviar.
+                <span class="channels">
+                  <span><svg class="ico"><use href="assets/icons.svg#i-chat" /></svg>WhatsApp</span>
+                  <span data-email-only><svg class="ico"><use href="assets/icons.svg#i-mail" /></svg>Correo</span>
+                  <span><svg class="ico"><use href="assets/icons.svg#i-download" /></svg>PDF</span>
+                </span>
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="sec" id="industrias">
+        <div class="wrap ind-wrap">
+          <div>
+            <h2 style="font-size: clamp(26px, 2.4vw, 32px)">Industrias que atendemos</h2>
+            <div class="under"></div>
+            <p class="lead" style="font-size: 14px">Soluciones químicas para múltiples sectores.</p>
+          </div>
+          <div class="ind-grid">
+            <div class="ind"><img src="assets/ind-electronica.jpg" alt="" loading="lazy" /><span>Electrónica</span></div>
+            <div class="ind"><img src="assets/ind-automotriz.jpg" alt="" loading="lazy" /><span>Automotriz</span></div>
+            <div class="ind"><img src="assets/ind-impresion.jpg" alt="" loading="lazy" /><span>Impresión y artes gráficas</span></div>
+            <div class="ind"><img src="assets/ind-mantenimiento.jpg" alt="" loading="lazy" /><span>Mantenimiento industrial</span></div>
+            <div class="ind"><img src="assets/ind-limpieza.jpg" alt="" loading="lazy" /><span>Productos de limpieza</span></div>
+            <div class="ind"><img src="assets/ind-recubrimientos.jpg" alt="" loading="lazy" /><span>Tintas y recubrimientos</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec soft" style="padding-block: 56px">
+        <div class="wrap">
+          <div class="cover">
+            <div>
+              <span class="kicker">NUESTRA COBERTURA</span>
+              <h2>CDMX y Estado de México</h2>
+              <p>Atendemos empresas ubicadas en la Ciudad de México y el Estado de México. Entregas sujetas a disponibilidad, ubicación, volumen y programación logística.</p>
+            </div>
+            <a class="btn btn-wa btn-lg" data-wa-generic href="#" target="_blank" rel="noopener">
+              <svg class="ico"><use href="assets/icons.svg#i-pin" /></svg>Consultar cobertura
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="faq">
+        <div class="wrap faq-grid">
+          <div>
+            <span class="kicker">PREGUNTAS FRECUENTES</span>
+            <h2>Lo que suelen preguntarnos</h2>
+            <p class="lead" style="font-size: 14px">¿No ves tu duda? Escríbenos y la resolvemos.</p>
+            <a class="btn btn-secondary" style="margin-top: 20px" data-wa-generic href="#" target="_blank" rel="noopener">
+              <svg class="ico"><use href="assets/icons.svg#i-chat" /></svg>Preguntar por WhatsApp
+            </a>
+          </div>
+          <div class="faq-list">
+            <details class="faq"><summary>¿Qué productos manejan?<svg class="ico"><use href="assets/icons.svg#i-plus" /></svg></summary><p>Alcohol isopropílico, alcohol etílico y solvente dieléctrico para uso industrial. Si necesitas otro producto, consúltanos.</p></details>
+            <details class="faq"><summary>¿En qué presentaciones se venden?<svg class="ico"><use href="assets/icons.svg#i-plus" /></svg></summary><p>Tambor de 200 litros y contenedor IBC bajo pedido. Otras presentaciones se consultan según disponibilidad.</p></details>
+            <details class="faq"><summary>¿La cotización en línea confirma existencias y precio?<svg class="ico"><use href="assets/icons.svg#i-plus" /></svg></summary><p>La cotización genera tu solicitud con folio. Existencias, tiempo de entrega, precio final y forma de pago se confirman con el equipo comercial por WhatsApp.</p></details>
+            <details class="faq"><summary>¿Pueden compartirme ficha técnica y hoja de seguridad?<svg class="ico"><use href="assets/icons.svg#i-plus" /></svg></summary><p>Sí. Puedes abrir la ficha técnica desde cada producto o solicitarla junto con tu cotización marcando la opción de documentación.</p></details>
+            <details class="faq"><summary>¿Atienden fuera de CDMX y Estado de México?<svg class="ico"><use href="assets/icons.svg#i-plus" /></svg></summary><p>Nuestra cobertura principal es CDMX y Estado de México. Si estás en otra zona, indícalo en tu cotización y revisamos si es posible atenderte.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec cta" id="contacto">
+        <div class="wrap cta-row">
+          <div>
+            <span class="kicker" style="color: #7fe0ff">COTIZACIONES</span>
+            <h2>Tu industria necesita un proveedor que responda.</h2>
+            <p>Comparte tus necesidades de abastecimiento y nuestro equipo comercial preparará una propuesta de suministro.</p>
+          </div>
+          <button class="btn btn-lg" type="button" data-open-cart>
+            <svg class="ico"><use href="assets/icons.svg#i-calc" /></svg>Solicitar cotización industrial
+            <svg class="ico arrow"><use href="assets/icons.svg#i-arrow" /></svg>
+          </button>
+        </div>
+      </section>
+
+      <section class="admin" id="configuracion" hidden aria-labelledby="admTitle">
+        <div class="wrap">
+          <span class="kicker" style="color: #8edcf5">CONFIGURACIÓN DEL SITIO</span>
+          <h2 id="admTitle">Cambiar número de WhatsApp</h2>
+          <p class="lead">Escribe el número de ventas (10 dígitos para México). Al guardar, se aplica <b>solo en este navegador</b> para que lo pruebes. Para que lo vean todos tus clientes, copia la línea de abajo en <code>CONFIG</code> dentro de <code>index.html</code> y vuelve a publicar.</p>
+          <div class="admin-field"><span>+52</span><input id="admInput" type="tel" inputmode="tel" placeholder="55 1234 5678" aria-label="Número de WhatsApp" autocomplete="off" /></div>
+          <small id="admHelp" aria-live="polite"></small>
+          <div class="btn-row" style="margin-top: 14px">
+            <button class="btn" type="button" id="admSave"><svg class="ico"><use href="assets/icons.svg#i-save" /></svg>Guardar número</button>
+            <a class="btn btn-secondary" id="admTest" href="#" target="_blank" rel="noopener"><svg class="ico"><use href="assets/icons.svg#i-ext" /></svg>Probar chat</a>
+            <button class="btn btn-ghost" type="button" id="admReset"><svg class="ico"><use href="assets/icons.svg#i-refresh" /></svg>Restablecer</button>
+          </div>
+          <pre><code id="admSnippet"></code></pre>
+          <div class="btn-row">
+            <button class="btn btn-secondary btn-sm" type="button" id="admCopy"><svg class="ico"><use href="assets/icons.svg#i-copy" /></svg>Copiar línea</button>
+            <button class="btn btn-ghost btn-sm" type="button" id="admClose"><svg class="ico"><use href="assets/icons.svg#i-x" /></svg>Cerrar configuración</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="foot">
+          <div>
+            <img src="assets/logo-blanco.png" alt="ALFA QUÍMICA" width="77" height="64" />
+            <div>Pureza en el producto.<br /><b style="color: #fff">Certeza en el suministro.</b></div>
+          </div>
+          <div><h4>COBERTURA</h4>CDMX y Estado de México</div>
+          <div>
+            <h4>CONTACTO</h4>
+            <a data-wa-generic href="#" target="_blank" rel="noopener">WhatsApp <b class="js-wa"></b></a>
+            <div id="footMail"></div>
+          </div>
+        </div>
+        <div class="foot-bot">
+          <span>© <span id="year"></span> ALFA QUÍMICA. Todos los derechos reservados.</span>
+          <span>La información de productos es de referencia; confirma ficha técnica y SDS vigentes al cotizar.</span>
+        </div>
+      </div>
+    </footer>
+
+    <button class="btn btn-wa btn-lg fab" id="fab" type="button" data-open-cart hidden>
+      <svg class="ico"><use href="assets/icons.svg#i-cart" /></svg>Ver cotización <span class="count" id="fabCount">0</span>
+    </button>
+
+    <dialog class="sheet" id="sheet" aria-labelledby="sheetTitle">
+      <div class="sheet-in">
+        <div class="sheet-head">
+          <div>
+            <h3 id="sheetTitle">Mi cotización</h3>
+            <div class="folio" id="folioTxt"></div>
+          </div>
+          <button class="icon-btn" type="button" id="sheetClose" aria-label="Cerrar cotización">
+            <svg class="ico"><use href="assets/icons.svg#i-x" /></svg>
+          </button>
+        </div>
+        <div class="sheet-body" id="sheetBody"></div>
+        <div class="sheet-foot" id="sheetFoot"></div>
+      </div>
+    </dialog>
+
+    <div class="toasts" id="toasts" popover="manual" role="status" aria-live="polite"></div>
+
+    <!-- jsPDF local + Guardia de duplicados y limpieza -->
+    <script src="vendor/jspdf.umd.min.js"></script>
+    <script src="assets/cotizador-validacion.js"></script>
+
+    <script>
+      (() => {
+        "use strict";
+        /* ╔══════════════════════════════════════════════════════════════════╗
+           ║  CONFIGURACIÓN — edita solo este bloque y el CATÁLOGO de abajo   ║
+           ╚══════════════════════════════════════════════════════════════════╝ */
+        const CONFIG = {
+          empresa: "ALFA QUÍMICA",
+          cobertura: "CDMX y Estado de México",
+          whatsapp: "525560996720",
+          correoVentas: "",
+          emailjs: { serviceId: "", templateId: "", publicKey: "" },
+          iva: 0.16,
+          moneda: "MXN",
+          condiciones: [
+            "Esta solicitud no confirma existencias, precio final ni fecha de entrega.",
+            "Existencias, tiempo de entrega, forma de pago y vigencia se confirman con el equipo comercial por WhatsApp.",
+            "Especificaciones sujetas a la ficha técnica y SDS vigentes del producto y lote.",
+          ],
+        };
+
+        const CATALOGO = [
+          {
+            id: "ipa", nombre: "Alcohol isopropílico (IPA)", categoria: "Limpieza técnica", etiqueta: "Producto destacado",
+            descripcion: "Solvente para limpieza y desengrase técnico en procesos industriales. Valida compatibilidad y documentación del lote.",
+            ficha: "fichas-tecnicas/alcohol-isopropilico.pdf",
+            specs: { Pureza: "Según ficha técnica", Uso: "Industrial" },
+            presentaciones: [
+              { id: "t200", label: "Tambor 200 L", imagen: "assets/pack-tambor.jpg", unidad: "tambor", unidades: "tambores", precio: null, existencia: "consultar", entrega: "Se confirma por WhatsApp" },
+              { id: "ibc", label: "IBC 1,000 L", imagen: "assets/pack-ibc.jpg", unidad: "contenedor", unidades: "contenedores", precio: null, existencia: "bajo-pedido", entrega: "Se confirma por WhatsApp" },
+            ],
+          },
+          {
+            id: "etanol", nombre: "Alcohol etílico (etanol)", categoria: "Uso industrial", etiqueta: "Suministro industrial",
+            descripcion: "Para solventes, tintas, limpieza y formulaciones. Grado y concentración por confirmar con la ficha técnica.",
+            ficha: "fichas-tecnicas/alcohol-etilico.pdf",
+            specs: { Concentración: "Según ficha técnica", Uso: "Industrial" },
+            presentaciones: [
+              { id: "t200", label: "Tambor 200 L", imagen: "assets/pack-tambor.jpg", unidad: "tambor", unidades: "tambores", precio: null, existencia: "consultar", entrega: "Se confirma por WhatsApp" },
+              { id: "ibc", label: "IBC 1,000 L", imagen: "assets/pack-ibc.jpg", unidad: "contenedor", unidades: "contenedores", precio: null, existencia: "bajo-pedido", entrega: "Se confirma por WhatsApp" },
+            ],
+          },
+          {
+            id: "dielectrico", nombre: "Solvente dieléctrico", categoria: "Mantenimiento eléctrico", etiqueta: "Consulta técnica",
+            descripcion: "Para limpieza de equipos donde el solvente no debe conducir electricidad. Valida compatibilidad con tu equipo.",
+            ficha: "fichas-tecnicas/solvente-dielectrico.pdf",
+            specs: { "Propiedades eléctricas": "Según ficha del fabricante", Seguridad: "Solicitar SDS vigente" },
+            presentaciones: [
+              { id: "t200", label: "Tambor 200 L", imagen: "assets/pack-tambor.jpg", unidad: "tambor", unidades: "tambores", precio: null, existencia: "consultar", entrega: "Se confirma por WhatsApp" },
+              { id: "ibc", label: "IBC 1,000 L", imagen: "assets/pack-ibc.jpg", unidad: "contenedor", unidades: "contenedores", precio: null, existencia: "bajo-pedido", entrega: "Se confirma por WhatsApp" },
+            ],
+          },
+        ];
+        if (window.ALFA_CONFIG) Object.assign(CONFIG, window.ALFA_CONFIG);
+
+        /* ═══════════ Utilidades ═══════════ */
+        const $ = (s, r = document) => r.querySelector(s);
+        const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+        const esc = (s) =>
+          String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+        // Ruta corregida hacia el sprite externo assets/icons.svg
+        const ico = (n, c = "") => `<svg class="ico ${c}" aria-hidden="true"><use href="assets/icons.svg#i-${n}"/></svg>`;
+        const money = (n) => new Intl.NumberFormat("es-MX", { style: "currency", currency: CONFIG.moneda }).format(n);
+        const round2 = (n) => Math.round(n * 100) / 100;
+        const EXIST = { disponible: "Disponible", "bajo-pedido": "Bajo pedido", consultar: "Existencias por confirmar" };
+        const prod = (id) => CATALOGO.find((p) => p.id === id);
+        const pres = (p, id) => p.presentaciones.find((r) => r.id === id);
+        const hasEmail = () => !!(CONFIG.emailjs.serviceId && CONFIG.emailjs.templateId && CONFIG.emailjs.publicKey);
+
+        function setLoading(btn, on) {
+          if (!btn) return;
+          btn.setAttribute("aria-busy", on ? "true" : "false");
+          btn.disabled = on;
+        }
+
+        function toast(msg, { type = "ok", action = null, ms = 5200 } = {}) {
+          const el = document.createElement("div");
+          el.className = "toast " + (type === "warn" ? "warn" : "");
+          el.innerHTML = `${ico(type === "warn" ? "x" : "check")}<span>${esc(msg)}</span>`;
+          if (action) {
+            const b = document.createElement("button");
+            b.type = "button";
+            b.className = "btn";
+            b.textContent = action.label;
+            b.onclick = () => { action.fn(); el.remove(); };
+            el.appendChild(b);
+          }
+          const x = document.createElement("button");
+          x.type = "button";
+          x.className = "icon-btn";
+          x.setAttribute("aria-label", "Cerrar aviso");
+          x.innerHTML = ico("x");
+          el.appendChild(x);
+          const box = $("#toasts");
+          box.appendChild(el);
+          try { if (box.showPopover && !box.matches(":popover-open")) box.showPopover(); } catch (e) {}
+          const done = () => {
+            el.remove();
+            if (!box.children.length) { try { box.hidePopover(); } catch (e) {} }
+          };
+          x.onclick = done;
+          setTimeout(done, ms);
+        }
+
+        /* ═══════════ WhatsApp ═══════════ */
+        const LS_WA = "alfa:whatsapp", LS_CART = "alfa:cotizacion:v2";
+        const normWA = (v) => {
+          let d = String(v || "").replace(/\D/g, "");
+          if (d.startsWith("00")) d = d.slice(2);
+          if (d.length === 10) d = "52" + d;
+          if (d.length === 13 && d.startsWith("521")) d = "52" + d.slice(3);
+          return d;
+        };
+        const validWA = (d) => (d.startsWith("52") ? d.length === 12 : d.length >= 8 && d.length <= 15);
+        const fmtWA = (d) =>
+          /^52\d{10}$/.test(d)
+            ? ["55", "33", "81"].includes(d.slice(2, 4))
+              ? `+52 ${d.slice(2, 4)} ${d.slice(4, 8)} ${d.slice(8)}`
+              : `+52 ${d.slice(2, 5)} ${d.slice(5, 8)} ${d.slice(8)}`
+            : d ? "+" + d : "";
+        const getWA = () => {
+          try {
+            const v = normWA(localStorage.getItem(LS_WA));
+            if (v && validWA(v)) return v;
+          } catch (e) {}
+          return normWA(CONFIG.whatsapp);
+        };
+        const waUrl = (msg) => `https://wa.me/${getWA()}${msg ? "?text=" + encodeURIComponent(msg) : ""}`;
+        function refreshWA() {
+          $$("[data-wa-generic]").forEach((a) => {
+            a.href = waUrl(`Hola ${CONFIG.empresa}, quiero información sobre sus productos y cobertura.`);
+          });
+          $$(".js-wa").forEach((e) => { e.textContent = fmtWA(getWA()); });
+          $("#footMail").innerHTML = CONFIG.correoVentas
+            ? `<a href="mailto:${esc(CONFIG.correoVentas)}">${esc(CONFIG.correoVentas)}</a>` : "";
+        }
+
+        /* ═══════════ Estado de la cotización ═══════════ */
+        const emptyClient = {
+          empresa: "", contacto: "", telefono: "", correo: "", cp: "",
+          asap: true, fecha: "", notas: "", docFicha: true, docSds: true,
+        };
+        const makeFolio = () => {
+          const d = new Date();
+          const r = Math.floor(1000 + Math.random() * 9000);
+          return `COT-${String(d.getFullYear()).slice(2)}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}-${r}`;
+        };
+
+        const save = () => {
+          try {
+            localStorage.setItem(LS_CART, JSON.stringify({ items: state.items, folio: state.folio }));
+          } catch (e) {}
+        };
+        let state = (() => {
+          let items = [];
+          let folio = makeFolio();
+          try {
+            const s = JSON.parse(localStorage.getItem(LS_CART) || "null");
+            if (s) {
+              items = (s.items || []).filter((i) => prod(i.pid) && pres(prod(i.pid), i.rid));
+              folio = s.folio || folio;
+            }
+          } catch (e) {}
+          const st = { items, cliente: { ...emptyClient }, folio, enviado: null, avisoPrivacidad: false };
+          save();
+          return st;
+        })();
+        const countItems = () => state.items.length;
+
+        function resetCotizacionYFormulario() {
+          if (window.AlfaCotizadorGuard) {
+            window.AlfaCotizadorGuard.limpiarFormularioYDatosAnteriores({
+              state,
+              makeFolio,
+              onAfterReset: () => {
+                state.avisoPrivacidad = false;
+                save();
+                updateBadges();
+                renderSheet();
+              },
+            });
+          } else {
+            state.items = [];
+            state.cliente = { ...emptyClient };
+            state.folio = makeFolio();
+            state.enviado = null;
+            state.avisoPrivacidad = false;
+            save();
+            updateBadges();
+            renderSheet();
+          }
+        }
+
+        function calc() {
+          let sub = 0, all = state.items.length > 0;
+          const lines = state.items.map((i) => {
+            const p = prod(i.pid), r = pres(p, i.rid);
+            const imp = r.precio != null ? round2(r.precio * i.qty) : null;
+            if (imp == null) all = false; else sub += imp;
+            return { key: i.key, p, r, qty: i.qty, unit: r.precio, imp, uni: i.qty === 1 ? r.unidad : r.unidades };
+          });
+          const iva = all ? round2(sub * CONFIG.iva) : null;
+          return { lines, all, sub: all ? round2(sub) : null, iva, total: all ? round2(sub + iva) : null };
+        }
+
+        function updateBadges() {
+          const n = countItems();
+          [$("#cartCount"), $("#fabCount")].forEach((c) => { c.textContent = n; });
+          $("#cartCount").hidden = n === 0;
+          $("#fab").hidden = n === 0 || $("#sheet").open;
+          const c = $("#cartCount");
+          c.classList.remove("bump");
+          void c.offsetWidth;
+          if (n) c.classList.add("bump");
+        }
+
+        function addItem(pid, rid, qty) {
+          const p = prod(pid), r = pres(p, rid);
+          if (!p || !r) return;
+          const key = `${pid}:${rid}`;
+          const prev = state.items.find((i) => i.key === key);
+          if (prev) prev.qty = Math.min(999, prev.qty + qty);
+          else state.items.push({ key, pid, rid, qty });
+          state.enviado = null;
+          save();
+          updateBadges();
+          toast(`${p.nombre} (${r.label}) agregado.`, {
+            action: { label: "Ver cotización", fn: openCart },
+          });
+        }
+
+        /* ═══════════ Catálogo ═══════════ */
+        let filtro = "Todos";
+        function renderChips() {
+          const cats = ["Todos", ...new Set(CATALOGO.map((p) => p.categoria))];
+          const box = $("#chips");
+          box.hidden = CATALOGO.length <= 4;
+          box.innerHTML = cats.map((c) =>
+            `<button class="chip" type="button" aria-pressed="${c === filtro}" data-cat="${esc(c)}">${esc(c)}</button>`).join("");
+        }
+        function renderCards() {
+          const list = CATALOGO.filter((p) => filtro === "Todos" || p.categoria === filtro);
+          $("#cards").innerHTML = list.length
+            ? list.map((p) => {
+                const r0 = p.presentaciones[0];
+                return `<article class="card" data-pid="${esc(p.id)}">
+      <div class="card-img"><img data-img src="${esc(r0.imagen)}" alt="${esc(p.nombre)}, ${esc(r0.label)}" loading="lazy"><span class="badge">${esc(p.etiqueta)}</span></div>
+      <div class="card-body">
+        <div><span class="badge" style="margin-bottom:10px;display:inline-block">${esc(p.categoria)}</span><h3>${esc(p.nombre)}</h3></div>
+        <p>${esc(p.descripcion)}</p>
+        <dl class="specs">${Object.entries(p.specs).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
+        <div><span class="pres-lbl" id="pl-${esc(p.id)}">Presentación</span>
+          <div class="seg" role="radiogroup" aria-labelledby="pl-${esc(p.id)}">${p.presentaciones.map((r, n) => `<label><input type="radio" name="r-${esc(p.id)}" value="${esc(r.id)}" ${n === 0 ? "checked" : ""}><span>${esc(r.label)}</span></label>`).join("")}</div></div>
+        <div class="stock" data-stock></div>
+        <div class="card-actions">
+          <div class="add-row">
+            <div class="stepper"><button type="button" data-q="-1" aria-label="Disminuir cantidad">${ico("minus")}</button><input type="number" inputmode="numeric" min="1" max="999" value="1" aria-label="Cantidad de ${esc(p.nombre)}"><button type="button" data-q="1" aria-label="Aumentar cantidad">${ico("plus")}</button></div>
+            <button class="btn btn-secondary" type="button" data-sheet>${ico("file")}Ficha técnica</button>
+          </div>
+          <button class="btn btn-lg btn-block" type="button" data-add>${ico("plus")}Agregar a cotización</button>
+        </div>
+      </div></article>`;
+              }).join("")
+            : '<div class="empty-cat">No hay productos en esta categoría.</div>';
+          $$("#cards .card").forEach(updateStock);
+        }
+        function selRid(card) { return $('input[type="radio"]:checked', card).value; }
+        function updateStock(card) {
+          const p = prod(card.dataset.pid), r = pres(p, selRid(card));
+          const price = r.precio != null
+            ? `<span class="price">${money(r.precio)}<small>${CONFIG.iva > 0 ? "+ IVA" : ""}</small></span>`
+            : '<span class="price pending">Precio por confirmar</span>';
+          const im = $("[data-img]", card);
+          if (im && r.imagen) { im.src = r.imagen; im.alt = `${p.nombre}, ${r.label}`; }
+          $("[data-stock]", card).innerHTML =
+            `<b class="st-${r.existencia}"><i></i>${EXIST[r.existencia]}</b><span>Entrega: ${esc(r.entrega)}</span><div style="flex-basis:100%">${price}</div>`;
+        }
+        const clampQ = (v, max = 999) => Math.max(1, Math.min(max, parseInt(v, 10) || 1));
+
+        $("#chips").addEventListener("click", (e) => {
+          const b = e.target.closest(".chip");
+          if (!b) return;
+          filtro = b.dataset.cat;
+          renderChips();
+          renderCards();
+        });
+        $("#cards").addEventListener("change", (e) => {
+          const c = e.target.closest(".card");
+          if (c && e.target.type === "radio") updateStock(c);
+        });
+        $("#cards").addEventListener("focusout", (e) => {
+          if (e.target.type === "number") e.target.value = clampQ(e.target.value);
+        });
+        $("#cards").addEventListener("click", (e) => {
+          const card = e.target.closest(".card");
+          if (!card) return;
+          const qb = e.target.closest("[data-q]");
+          if (qb) {
+            const i = $('input[type="number"]', card);
+            i.value = clampQ(+i.value + +qb.dataset.q);
+            return;
+          }
+          if (e.target.closest("[data-add]")) {
+            const i = $('input[type="number"]', card);
+            addItem(card.dataset.pid, selRid(card), clampQ(i.value));
+            i.value = 1;
+            return;
+          }
+          const sb = e.target.closest("[data-sheet]");
+          if (sb) openSheetPdf(card.dataset.pid, sb);
+        });
+
+        async function openSheetPdf(pid, btn) {
+          const p = prod(pid);
+          const missing = () => toast(`La ficha técnica de ${p.nombre} aún no está cargada.`, {
+            type: "warn", ms: 9000,
+            action: {
+              label: "Solicitarla",
+              fn: () => window.open(waUrl(`Hola ${CONFIG.empresa}, solicito la ficha técnica y la hoja de datos de seguridad (SDS) de: ${p.nombre}.`), "_blank", "noopener"),
+            },
+          });
+          if (!p.ficha) return missing();
+          setLoading(btn, true);
+          try {
+            const r = await fetch(p.ficha, { method: "HEAD" });
+            if (r.ok && /pdf/i.test(r.headers.get("content-type") || "")) {
+              window.open(p.ficha, "_blank", "noopener");
+            } else {
+              missing();
+            }
+          } catch {
+            missing();
+          } finally {
+            setLoading(btn, false);
+          }
+        }
+
+        /* ═══════════ Modal Cotizador ═══════════ */
+        function buildResumenTexto(snapshotItems, snapshotCliente, snapshotFolio) {
+          const lineas = snapshotItems.map((i, idx) => {
+            const p = prod(i.pid), r = pres(p, i.rid);
+            return `${idx + 1}. ${p.nombre} - ${r.label} x ${i.qty}`;
+          }).join("\n");
+
+          return [
+            `Hola ${CONFIG.empresa}, envío solicitud de cotización:`,
+            `Folio: ${snapshotFolio}`,
+            `Empresa: ${snapshotCliente.empresa}`,
+            `Contacto: ${snapshotCliente.contacto || "No indicado"}`,
+            `Teléfono: ${snapshotCliente.telefono}`,
+            `Correo: ${snapshotCliente.correo}`,
+            `CP Entrega: ${snapshotCliente.cp || "Por confirmar"}`,
+            `Productos:\n${lineas}`,
+            snapshotCliente.notas ? `Notas: ${snapshotCliente.notas}` : "",
+          ].filter(Boolean).join("\n");
+        }
+
+        function descargarPdfCotizacion(snapshotItems, snapshotCliente, snapshotFolio) {
+          if (!window.jspdf?.jsPDF) {
+            toast("No se pudo cargar el generador de PDF.", { type: "warn" });
+            return;
+          }
+          const { jsPDF } = window.jspdf;
+          const doc = new jsPDF();
+          doc.setFontSize(16);
+          doc.text(`${CONFIG.empresa} - Solicitud de Cotización`, 14, 18);
+          doc.setFontSize(10);
+          doc.text(`Folio: ${snapshotFolio}`, 14, 26);
+          doc.text(`Empresa: ${snapshotCliente.empresa}`, 14, 32);
+          doc.text(`Contacto: ${snapshotCliente.contacto || "-"}`, 14, 38);
+          doc.text(`Teléfono: ${snapshotCliente.telefono}`, 14, 44);
+          doc.text(`Correo: ${snapshotCliente.correo}`, 14, 50);
+          doc.text(`CP Entrega: ${snapshotCliente.cp || "-"}`, 14, 56);
+
+          let y = 66;
+          doc.setFontSize(11);
+          doc.text("Productos solicitados:", 14, y);
+          y += 7;
+          doc.setFontSize(10);
+          snapshotItems.forEach((i, idx) => {
+            const p = prod(i.pid), r = pres(p, i.rid);
+            doc.text(`${idx + 1}. ${p.nombre} | ${r.label} | Cantidad: ${i.qty}`, 14, y);
+            y += 6;
+          });
+
+          y += 6;
+          doc.setFontSize(8.5);
+          CONFIG.condiciones.forEach((c) => {
+            const lines = doc.splitTextToSize(`• ${c}`, 180);
+            doc.text(lines, 14, y);
+            y += lines.length * 4.5;
+          });
+
+          doc.save(`${snapshotFolio}.pdf`);
+        }
+
+        function validarCamposBasicos() {
+          const root = $("#sheetBody");
+          if (window.AlfaCotizadorGuard) {
+            window.AlfaCotizadorGuard.limpiarErroresFormulario(root);
+          }
+          const c = state.cliente;
+          const telDigits = String(c.telefono || "").replace(/\D/g, "");
+          let valido = true;
+
+          const marcar = (campo, msg) => {
+            valido = false;
+            const inp = root.querySelector(`[name="${campo}"]`);
+            if (inp) inp.setAttribute("aria-invalid", "true");
+            const err = root.querySelector(`[data-err-for="${campo}"]`);
+            if (err) { err.textContent = msg; err.hidden = false; }
+          };
+
+          if (!String(c.empresa || "").trim()) marcar("empresa", "Ingresa el nombre de la empresa.");
+          if (telDigits.length < 10) marcar("telefono", "Ingresa un teléfono válido de al menos 10 dígitos.");
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(c.correo || "").trim())) {
+            marcar("correo", "Ingresa un correo electrónico válido.");
+          }
+          if (!state.avisoPrivacidad) {
+            valido = false;
+            const pErr = $("#privacyErr");
+            if (pErr) pErr.style.display = "block";
+          }
+          return valido;
+        }
+
+        async function procesarEnvio(canal, btn) {
+          if (!state.items.length) {
+            toast("Agrega al menos un producto a la cotización.", { type: "warn" });
+            return;
+          }
+          if (!validarCamposBasicos()) {
+            toast("Revisa los campos marcados antes de enviar.", { type: "warn" });
+            return;
+          }
+
+          setLoading(btn, true);
+          try {
+            // 1. Validar duplicados en empresa, teléfono y correo (local + /api/leads)
+            if (window.AlfaCotizadorGuard) {
+              const check = await window.AlfaCotizadorGuard.validarYRegistrarSinDuplicados({
+                cliente: state.cliente,
+                items: state.items,
+                folio: state.folio,
+              });
+              if (!check.ok) {
+                toast(check.error || "Empresa, teléfono o correo ya registrados.", { type: "warn", ms: 7000 });
+                return;
+              }
+            }
+
+            // 2. Capturar instantánea de los datos antes de limpiar
+            const snapItems = state.items.map((x) => ({ ...x }));
+            const snapCliente = { ...state.cliente };
+            const snapFolio = state.folio;
+            const resumen = buildResumenTexto(snapItems, snapCliente, snapFolio);
+
+            if (canal === "wa") {
+              window.open(waUrl(resumen), "_blank", "noopener");
+            } else if (canal === "pdf") {
+              descargarPdfCotizacion(snapItems, snapCliente, snapFolio);
+            }
+
+            // 3. Limpiar formulario, datos anteriores, carrito y generar nuevo folio
+            resetCotizacionYFormulario();
+            state.enviado = { folio: snapFolio, canal };
+            renderSheet();
+            toast(`Cotización ${snapFolio} enviada. Formulario y datos anteriores limpiados.`);
+          } finally {
+            setLoading(btn, false);
+          }
+        }
+
+        function renderSheet() {
+          $("#folioTxt").textContent = `Folio: ${state.folio}`;
+          const body = $("#sheetBody");
+          const foot = $("#sheetFoot");
+          const tot = calc();
+
+          const avisoPrevio = state.enviado
+            ? `<div class="sent">
+                ${ico("check")}
+                <div>
+                  <div>Solicitud <b>${esc(state.enviado.folio)}</b> procesada correctamente.</div>
+                  <div style="font-weight:400;margin-top:2px">El formulario y los datos anteriores fueron limpiados automáticamente para una nueva cotización.</div>
+                </div>
+              </div>`
+            : "";
+
+          const listaHtml = state.items.length
+            ? `<ul class="lines">
+                ${tot.lines.map((l) => `
+                  <li class="line" data-key="${esc(l.key)}">
+                    <div>
+                      <b>${esc(l.p.nombre)}</b>
+                      <small>${esc(l.r.label)} · ${esc(EXIST[l.r.existencia])}</small>
+                    </div>
+                    <div class="line-price ${l.imp == null ? "pending" : ""}">
+                      ${l.imp != null ? money(l.imp) : "Por confirmar"}
+                    </div>
+                    <div class="line-ctl">
+                      <div class="stepper">
+                        <button type="button" data-line-q="-1" aria-label="Disminuir">${ico("minus")}</button>
+                        <input type="number" min="1" max="999" value="${l.qty}" aria-label="Cantidad" />
+                        <button type="button" data-line-q="1" aria-label="Aumentar">${ico("plus")}</button>
+                      </div>
+                      <button type="button" class="icon-btn" data-line-del aria-label="Quitar producto">${ico("trash")}</button>
+                    </div>
+                  </li>`).join("")}
+              </ul>
+              ${tot.all
+                ? `<div class="totals">
+                    <div><span>Subtotal</span><strong>${money(tot.sub)}</strong></div>
+                    <div><span>IVA (${Math.round(CONFIG.iva * 100)}%)</span><strong>${money(tot.iva)}</strong></div>
+                    <div class="tot"><span>Total estimado</span><span>${money(tot.total)}</span></div>
+                  </div>`
+                : ""}`
+            : `<div class="empty">
+                ${ico("cart")}
+                <b>Tu cotización está vacía</b>
+                <span>Agrega productos desde el catálogo para armar tu solicitud.</span>
+              </div>`;
+
+          const c = state.cliente;
+          body.innerHTML = `
+            ${avisoPrevio}
+            <div class="blk">
+              <h4><i>1</i> Productos seleccionados</h4>
+              ${listaHtml}
+            </div>
+            <div class="blk">
+              <h4><i>2</i> Datos de contacto (no repetibles)</h4>
+              <form id="quoteForm" class="fields" novalidate autocomplete="off">
+                <div class="f full">
+                  <label for="f_empresa">Empresa / Razón social *</label>
+                  <input id="f_empresa" name="empresa" type="text" required value="${esc(c.empresa)}" placeholder="Ej. Industrias del Centro S.A. de C.V." />
+                  <div class="err" data-err-for="empresa" hidden></div>
+                </div>
+                <div class="f">
+                  <label for="f_contacto">Nombre de contacto</label>
+                  <input id="f_contacto" name="contacto" type="text" value="${esc(c.contacto)}" placeholder="Nombre y apellido" />
+                </div>
+                <div class="f">
+                  <label for="f_telefono">Teléfono / WhatsApp (10 dígitos) *</label>
+                  <input id="f_telefono" name="telefono" type="tel" inputmode="tel" required value="${esc(c.telefono)}" placeholder="55 1234 5678" />
+                  <div class="err" data-err-for="telefono" hidden></div>
+                </div>
+                <div class="f">
+                  <label for="f_correo">Correo corporativo *</label>
+                  <input id="f_correo" name="correo" type="email" required value="${esc(c.correo)}" placeholder="compras@empresa.com" />
+                  <div class="err" data-err-for="correo" hidden></div>
+                </div>
+                <div class="f">
+                  <label for="f_cp">C.P. de entrega</label>
+                  <input id="f_cp" name="cp" type="text" inputmode="numeric" maxlength="5" value="${esc(c.cp)}" placeholder="06600" />
+                </div>
+                <div class="f full">
+                  <label for="f_notas">Notas o requerimientos <em>(opcional)</em></label>
+                  <textarea id="f_notas" name="notas" rows="2" placeholder="Frecuencia de consumo, maniobras o documentación requerida">${esc(c.notas)}</textarea>
+                </div>
+                <div class="f full">
+                  <div class="privacy-box">
+                    Acepto el uso de mis datos exclusivamente para seguimiento de esta cotización comercial. Empresa, teléfono y correo deben ser distintos a registros previos.
+                    <label>
+                      <input type="checkbox" id="f_priv" ${state.avisoPrivacidad ? "checked" : ""} />
+                      <span>He leído y acepto los términos de contacto.</span>
+                    </label>
+                    <div class="privacy-error" id="privacyErr">Debes aceptar para continuar.</div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          `;
+
+          foot.innerHTML = `
+            <div class="two">
+              <button type="button" class="btn btn-wa" id="sendWaBtn">${ico("chat")}Enviar por WhatsApp</button>
+              <button type="button" class="btn btn-secondary" id="sendPdfBtn">${ico("download")}Descargar PDF</button>
+            </div>
+            <button type="button" class="btn btn-ghost btn-sm" id="clearAllBtn">${ico("trash")}Limpiar formulario y datos anteriores</button>
+            <p class="hint">Al enviar, el formulario y los datos anteriores se limpian automáticamente.</p>
+          `;
+        }
+
+        function openCart() {
+          renderSheet();
+          const dlg = $("#sheet");
+          if (!dlg.open) dlg.showModal();
+          updateBadges();
+        }
+        function closeCart() {
+          const dlg = $("#sheet");
+          if (dlg.open) dlg.close();
+          updateBadges();
+        }
+
+        $("#sheetBody").addEventListener("input", (e) => {
+          const t = e.target;
+          if (t.name && t.name in state.cliente) {
+            state.cliente[t.name] = t.value;
+            t.removeAttribute("aria-invalid");
+            const err = $("#sheetBody").querySelector(`[data-err-for="${t.name}"]`);
+            if (err) { err.textContent = ""; err.hidden = true; }
+          }
+          if (t.id === "f_priv") {
+            state.avisoPrivacidad = t.checked;
+            const pErr = $("#privacyErr");
+            if (pErr && t.checked) pErr.style.display = "none";
+          }
+        });
+
+        $("#sheetBody").addEventListener("click", (e) => {
+          const lineEl = e.target.closest(".line");
+          if (!lineEl) return;
+          const item = state.items.find((i) => i.key === lineEl.dataset.key);
+          if (!item) return;
+
+          const qBtn = e.target.closest("[data-line-q]");
+          if (qBtn) {
+            item.qty = clampQ(item.qty + +qBtn.dataset.lineQ);
+            save();
+            updateBadges();
+            renderSheet();
+            return;
+          }
+          if (e.target.closest("[data-line-del]")) {
+            state.items = state.items.filter((i) => i.key !== item.key);
+            save();
+            updateBadges();
+            renderSheet();
+          }
+        });
+
+        $("#sheetFoot").addEventListener("click", (e) => {
+          const waBtn = e.target.closest("#sendWaBtn");
+          if (waBtn) return procesarEnvio("wa", waBtn);
+          const pdfBtn = e.target.closest("#sendPdfBtn");
+          if (pdfBtn) return procesarEnvio("pdf", pdfBtn);
+          if (e.target.closest("#clearAllBtn")) {
+            resetCotizacionYFormulario();
+            toast("Formulario y datos anteriores limpiados.");
+          }
+        });
+
+        $$("[data-open-cart]").forEach((b) => b.addEventListener("click", openCart));
+        $("#sheetClose").addEventListener("click", closeCart);
+        $("#sheet").addEventListener("click", (e) => { if (e.target === $("#sheet")) closeCart(); });
+
+        /* ═══════════ Menú móvil y Admin WhatsApp ═══════════ */
+        const menuBtn = $("#menuBtn"), mainNav = $("#mainNav");
+        if (menuBtn && mainNav) {
+          menuBtn.addEventListener("click", () => {
+            const open = mainNav.classList.toggle("open");
+            menuBtn.setAttribute("aria-expanded", String(open));
+          });
+          $$("a", mainNav).forEach((a) => a.addEventListener("click", () => {
+            mainNav.classList.remove("open");
+            menuBtn.setAttribute("aria-expanded", "false");
+          }));
+        }
+
+        function checkAdminHash() {
+          const adm = $("#configuracion");
+          if (!adm) return;
+          adm.hidden = location.hash !== "#configuracion";
+          if (!adm.hidden) {
+            $("#admInput").value = getWA().replace(/^52/, "");
+            $("#admSnippet").textContent = `whatsapp: "${getWA()}",`;
+            $("#admTest").href = waUrl("Prueba de conexión de WhatsApp.");
+          }
+        }
+        window.addEventListener("hashchange", checkAdminHash);
+
+        $("#admSave")?.addEventListener("click", () => {
+          const d = normWA($("#admInput").value);
+          if (!validWA(d)) {
+            $("#admHelp").textContent = "Número inválido. Escribe 10 dígitos.";
+            $("#admHelp").className = "bad";
+            return;
+          }
+          localStorage.setItem(LS_WA, d);
+          refreshWA();
+          $("#admSnippet").textContent = `whatsapp: "${d}",`;
+          $("#admTest").href = waUrl("Prueba de conexión de WhatsApp.");
+          $("#admHelp").textContent = "Número guardado en este navegador.";
+          $("#admHelp").className = "good";
+        });
+        $("#admReset")?.addEventListener("click", () => {
+          localStorage.removeItem(LS_WA);
+          refreshWA();
+          checkAdminHash();
+          $("#admHelp").textContent = "Número restablecido al de CONFIG.";
+          $("#admHelp").className = "";
+        });
+        $("#admCopy")?.addEventListener("click", async () => {
+          await navigator.clipboard?.writeText($("#admSnippet").textContent);
+          toast("Línea copiada al portapapeles.");
+        });
+        $("#admClose")?.addEventListener("click", () => {
+          history.replaceState(null, "", "#inicio");
+          checkAdminHash();
+        });
+
+        /* ═══════════ Inicialización ═══════════ */
+        $("#year").textContent = new Date().getFullYear();
+        $$("[data-email-only]").forEach((el) => { el.hidden = !hasEmail(); });
+        refreshWA();
+        renderChips();
+        renderCards();
+        updateBadges();
+        checkAdminHash();
+      })();
+    </script>
+  </body>
+</html>
