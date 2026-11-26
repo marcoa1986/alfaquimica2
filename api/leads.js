@@ -1,14 +1,26 @@
+import { createRequire } from 'node:module';
+
+const require = typeof module !== 'undefined' && module.exports
+  ? require
+  : createRequire(import.meta.url);
+
 const { Pool } = require('pg');
 
-const pool = globalThis.__alfaLeadsPool || new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: process.env.DATABASE_URL && process.env.DATABASE_URL.includes('localhost')
-    ? false
-    : { rejectUnauthorized: false },
-});
+const globalScope = typeof globalThis !== 'undefined' ? globalThis : global;
 
-if (!globalThis.__alfaLeadsPool) {
-  globalThis.__alfaLeadsPool = pool;
+function getPool() {
+  if (!process.env.DATABASE_URL) {
+    throw new Error('Falta configurar DATABASE_URL en las variables de entorno de Vercel.');
+  }
+  if (!globalScope.__alfaLeadsPool) {
+    globalScope.__alfaLeadsPool = new Pool({
+      connectionString: process.env.DATABASE_URL,
+      ssl: process.env.DATABASE_URL.includes('localhost')
+        ? false
+        : { rejectUnauthorized: false },
+    });
+  }
+  return globalScope.__alfaLeadsPool;
 }
 
 function normText(v = '') {
@@ -36,7 +48,7 @@ function isAllowedOrigin(origin = '') {
   return false;
 }
 
-async function ensureSchema() {
+async function ensureSchema(pool) {
   await pool.query(`
     CREATE TABLE IF NOT EXISTS cotizaciones_leads (
       id BIGSERIAL PRIMARY KEY,
@@ -63,8 +75,8 @@ async function ensureSchema() {
   `);
 }
 
-module.exports = async function handler(req, res) {
-  const reqOrigin = req.headers.origin || '';
+async function handler(req, res) {
+  const reqOrigin = (req.headers && req.headers.origin) || '';
   if (isAllowedOrigin(reqOrigin)) {
     res.setHeader('Access-Control-Allow-Origin', reqOrigin || 'https://alfaquimica2.vercel.app');
   }
@@ -76,15 +88,9 @@ module.exports = async function handler(req, res) {
     return res.status(204).end();
   }
 
-  if (!process.env.DATABASE_URL) {
-    return res.status(500).json({
-      ok: false,
-      error: 'Falta configurar DATABASE_URL en las variables de entorno de Vercel.',
-    });
-  }
-
   try {
-    await ensureSchema();
+    const pool = getPool();
+    await ensureSchema(pool);
 
     if (req.method === 'GET') {
       const { rows } = await pool.query(
@@ -180,4 +186,9 @@ module.exports = async function handler(req, res) {
       detail: err && err.message ? err.message : String(err),
     });
   }
-};
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = handler;
+}
+export default handler;
