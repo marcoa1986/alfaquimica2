@@ -122,11 +122,13 @@ async function handler(req, res) {
       rawBody = {};
     }
 
-    const body = (rawBody.lead && typeof rawBody.lead === 'object')
-      ? { ...rawBody, ...rawBody.lead }
-      : (rawBody.data && typeof rawBody.data === 'object')
-        ? { ...rawBody, ...rawBody.data }
-        : rawBody;
+    const nested =
+      (rawBody.cliente && typeof rawBody.cliente === 'object' && rawBody.cliente) ||
+      (rawBody.lead && typeof rawBody.lead === 'object' && rawBody.lead) ||
+      (rawBody.data && typeof rawBody.data === 'object' && rawBody.data) ||
+      {};
+
+    const body = { ...rawBody, ...nested };
 
     const empresa = pickField(body, ['empresa', 'company', 'empresa_nombre', 'razonSocial', 'razon_social']);
     const contacto = pickField(body, ['contacto', 'nombre', 'contactName', 'contact_name']);
@@ -136,7 +138,7 @@ async function handler(req, res) {
     const notas = pickField(body, ['notas', 'notes', 'comentarios', 'requerimientos']);
     const canal = pickField(body, ['canal', 'channel', 'source']) || 'web';
     const folio = pickField(body, ['folio', 'quoteFolio', 'quote_folio']) || `COT-${Date.now()}`;
-    const items = Array.isArray(body.items) ? body.items : (Array.isArray(body.productos) ? body.productos : []);
+    const items = Array.isArray(rawBody.items) ? rawBody.items : (Array.isArray(body.items) ? body.items : []);
     const subtotal = Number(body.subtotal || 0);
     const iva = Number(body.iva || 0);
     const total = Number(body.total || 0);
@@ -149,11 +151,6 @@ async function handler(req, res) {
       return res.status(400).json({
         ok: false,
         error: 'Empresa, telefono y correo son obligatorios.',
-        recibido: {
-          empresa: Boolean(empresaNorm),
-          telefono: Boolean(telefonoNorm),
-          correo: Boolean(correoNorm),
-        },
       });
     }
 
