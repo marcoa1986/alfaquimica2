@@ -48,6 +48,15 @@ function isAllowedOrigin(origin = '') {
   return false;
 }
 
+function pickField(obj, keys) {
+  for (const k of keys) {
+    if (obj && obj[k] !== undefined && obj[k] !== null && String(obj[k]).trim() !== '') {
+      return String(obj[k]).trim();
+    }
+  }
+  return '';
+}
+
 async function ensureSchema(pool) {
   await pool.query(`
     CREATE TABLE IF NOT EXISTS cotizaciones_leads (
@@ -106,22 +115,28 @@ async function handler(req, res) {
       return res.status(405).json({ ok: false, error: 'Metodo no permitido.' });
     }
 
-    let body = req.body;
-    if (typeof body === 'string') {
-      body = body ? JSON.parse(body) : {};
-    } else if (!body || typeof body !== 'object') {
-      body = {};
+    let rawBody = req.body;
+    if (typeof rawBody === 'string') {
+      rawBody = rawBody ? JSON.parse(rawBody) : {};
+    } else if (!rawBody || typeof rawBody !== 'object') {
+      rawBody = {};
     }
 
-    const empresa = String(body.empresa || '').trim();
-    const contacto = String(body.contacto || '').trim();
-    const telefono = String(body.telefono || '').trim();
-    const correo = String(body.correo || '').trim();
-    const cp = String(body.cp || '').trim();
-    const notas = String(body.notas || '').trim();
-    const canal = String(body.canal || 'web').trim();
-    const folio = String(body.folio || `COT-${Date.now()}`).trim();
-    const items = Array.isArray(body.items) ? body.items : [];
+    const body = (rawBody.lead && typeof rawBody.lead === 'object')
+      ? { ...rawBody, ...rawBody.lead }
+      : (rawBody.data && typeof rawBody.data === 'object')
+        ? { ...rawBody, ...rawBody.data }
+        : rawBody;
+
+    const empresa = pickField(body, ['empresa', 'company', 'empresa_nombre', 'razonSocial', 'razon_social']);
+    const contacto = pickField(body, ['contacto', 'nombre', 'contactName', 'contact_name']);
+    const telefono = pickField(body, ['telefono', 'phone', 'whatsapp', 'tel']);
+    const correo = pickField(body, ['correo', 'email', 'correoCorporativo', 'correo_corporativo']);
+    const cp = pickField(body, ['cp', 'codigoPostal', 'codigo_postal', 'zip']);
+    const notas = pickField(body, ['notas', 'notes', 'comentarios', 'requerimientos']);
+    const canal = pickField(body, ['canal', 'channel', 'source']) || 'web';
+    const folio = pickField(body, ['folio', 'quoteFolio', 'quote_folio']) || `COT-${Date.now()}`;
+    const items = Array.isArray(body.items) ? body.items : (Array.isArray(body.productos) ? body.productos : []);
     const subtotal = Number(body.subtotal || 0);
     const iva = Number(body.iva || 0);
     const total = Number(body.total || 0);
@@ -134,6 +149,11 @@ async function handler(req, res) {
       return res.status(400).json({
         ok: false,
         error: 'Empresa, telefono y correo son obligatorios.',
+        recibido: {
+          empresa: Boolean(empresaNorm),
+          telefono: Boolean(telefonoNorm),
+          correo: Boolean(correoNorm),
+        },
       });
     }
 
